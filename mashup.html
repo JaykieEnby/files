@@ -6,7 +6,24 @@
 <title>Sound Craft — City Pulse Vol. 2</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-
+<style>
+  .project-video-wrap {
+    width: 100%;
+    margin: 2rem 0 2.5rem;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.08);
+    background: #000;
+    position: relative;
+  }
+  .project-video {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+  }
+</style>
 </head>
 <body>
 <section class="project-page">
@@ -30,15 +47,16 @@
   </div>
 
   <div class="project-body">
-      <p><em>City Pulse Vol. 2</em> is the second in a series of live mashup performances designed for urban, mixed-demographic audiences. Where Vol. 1 focused on era-bridging (50s jazz over 2010s beats), Vol. 2 explored cultural collision: OPM ballads fused with UK drill, Bossa Nova rhythms beneath trap hi-hats.</p>
-      <p>Fourteen source tracks were licensed, stems extracted, and processed individually before the live performance. The set was built in Ableton with careful attention to key compatibility — using the Camelot Wheel to ensure harmonic coherence across wildly different genres. Where keys clashed, pitch-shifted acapellas were used as neutral bridges.</p>
-      <p>The live audience reaction was the most reliable metric: the moment when two songs that seemingly have no business being together suddenly snap into perfect sense. That moment — that 'oh' of recognition — is what this work chases.</p>
-    <div class="project-meta">
-      <div class="meta-item"><span class="meta-label">Duration</span><span class="meta-value">40 min</span></div>
-      <div class="meta-item"><span class="meta-label">Tracks</span><span class="meta-value">14 (stems extracted)</span></div>
-      <div class="meta-item"><span class="meta-label">Year</span><span class="meta-value">2024</span></div>
-      <div class="meta-item"><span class="meta-label">Venue</span><span class="meta-value">Club event · Manila</span></div>
-      <div class="meta-item"><span class="meta-label">Tools</span><span class="meta-value">Ableton Live · Camelot Wheel · Native Instruments</span></div>
+      <div class="project-video-wrap">
+      <video
+        class="project-video"
+        src="src/Paraoan_Mashup_vid.mp4"
+        controls
+        preload="metadata"
+        playsinline
+      >
+        Your browser does not support the video tag.
+      </video>
     </div>
   </div>
 

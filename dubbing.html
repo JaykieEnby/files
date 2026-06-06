@@ -6,7 +6,24 @@
 <title>Sound Craft — Voices Across</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-
+<style>
+  .project-video-wrap {
+    width: 100%;
+    margin: 2rem 0 2.5rem;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.08);
+    background: #000;
+    position: relative;
+  }
+  .project-video {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+  }
+</style>
 </head>
 <body>
 <section class="project-page">
@@ -30,15 +47,16 @@
   </div>
 
   <div class="project-body">
-      <p><em>Voices Across</em> was a localization project for a 6-episode documentary series produced for regional broadcast. The original was recorded in three languages; our task was to create a seamless Filipino-language dub that retained the warmth, urgency, and cultural nuance of the source performances.</p>
-      <p>Lip-sync dubbing is a discipline of compromise and precision. Each line must land within the speaker's mouth movements while carrying the emotional arc of the original. We auditioned over 40 voice talents and cast six principal voices, each coached to internalize rather than merely imitate the originals.</p>
-      <p>The sessions ran across three weeks, with daily iZotope RX passes to clean studio ambience and ensure the dubbed dialogue sat naturally within the location-sound beds. The result was delivered broadcast-ready at -23 LUFS integrated, with full M&E stems.</p>
-    <div class="project-meta">
-      <div class="meta-item"><span class="meta-label">Episodes</span><span class="meta-value">6 × 22 min</span></div>
-      <div class="meta-item"><span class="meta-label">Language</span><span class="meta-value">Filipino (from EN/ES/JP)</span></div>
-      <div class="meta-item"><span class="meta-label">Delivery</span><span class="meta-value">Broadcast · -23 LUFS</span></div>
-      <div class="meta-item"><span class="meta-label">Year</span><span class="meta-value">2024</span></div>
-      <div class="meta-item"><span class="meta-label">Tools</span><span class="meta-value">Pro Tools · iZotope RX · Adobe Audition</span></div>
+      <div class="project-video-wrap">
+      <video
+        class="project-video"
+        src="src/Paraoan_Dubbing_vid.mp4"
+        controls
+        preload="metadata"
+        playsinline
+      >
+        Your browser does not support the video tag.
+      </video>
     </div>
   </div>
 

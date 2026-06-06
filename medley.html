@@ -6,7 +6,24 @@
 <title>Sound Craft — Heritage Collage</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-
+<style>
+  .project-video-wrap {
+    width: 100%;
+    margin: 2rem 0 2.5rem;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.08);
+    background: #000;
+    position: relative;
+  }
+  .project-video {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+  }
+</style>
 </head>
 <body>
 <section class="project-page">
@@ -30,15 +47,16 @@
   </div>
 
   <div class="project-body">
-      <p>A medley is the art of weaving — taking disparate melodies and breathing them into a single, breathing whole. <em>Heritage Collage</em> began as a commission to honour three generations of a family's musical history: a grandmother's folk lullabies, a father's protest songs, and the pop sensibilities of a contemporary daughter.</p>
-      <p>Working from archival cassette recordings, VHS audio rips, and fresh studio sessions, the challenge was tonal: how do you honour the rawness of 1960s folk while respecting modern listener expectations? The answer lay in careful key modulation, slow harmonic bridging, and strategically placed silence as punctuation.</p>
-      <p>The final 9-minute piece moves through seven distinct musical themes, each given space to breathe before being gently drawn toward the next — like rivers meeting at a delta. It premiered at a national cultural heritage exhibition and has since been used in a documentary short.</p>
-    <div class="project-meta">
-      <div class="meta-item"><span class="meta-label">Duration</span><span class="meta-value">9 min 14 sec</span></div>
-      <div class="meta-item"><span class="meta-label">Formats</span><span class="meta-value">WAV 24-bit / MP3 320</span></div>
-      <div class="meta-item"><span class="meta-label">Year</span><span class="meta-value">2024</span></div>
-      <div class="meta-item"><span class="meta-label">Client</span><span class="meta-value">Private Commission</span></div>
-      <div class="meta-item"><span class="meta-label">Tools</span><span class="meta-value">Pro Tools · iZotope RX · Melodyne</span></div>
+      <div class="project-video-wrap">
+      <video
+        class="project-video"
+        src="src/Paraoan_Medley_vid.mp4"
+        controls
+        preload="metadata"
+        playsinline
+      >
+        Your browser does not support the video tag.
+      </video>
     </div>
   </div>
 

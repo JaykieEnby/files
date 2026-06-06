@@ -6,7 +6,24 @@
 <title>Sound Craft — Fractured Hymns</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-
+<style>
+  .project-video-wrap {
+    width: 100%;
+    margin: 2rem 0 2.5rem;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.08);
+    background: #000;
+    position: relative;
+  }
+  .project-video {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+  }
+</style>
 </head>
 <body>
 <section class="project-page">
@@ -30,15 +47,16 @@
   </div>
 
   <div class="project-body">
-      <p>The cut-up technique — pioneered by William Burroughs — treats language as raw material, slicing text and reassembling the fragments to surface unexpected meaning. <em>Fractured Hymns</em> extends this into audio: 40 minutes of recorded sermon recordings, street interviews, and political speeches, edited into a 7-minute spoken-word composition.</p>
-      <p>Every edit was intentional. Words were lifted from context and placed in new dialogues with other voices — a preacher's cadence colliding with a protestor's chant, a mother's lullaby fragments interrupting an auctioneer. The collisions create discomfort, humour, and, occasionally, profound accidental poetry.</p>
-      <p>Presented as a sound installation at an independent gallery, the piece ran on loop for 30 days, with visitors invited to submit their own recordings for future iterations. It was later adapted as the audio bed for a graphic novel epilogue.</p>
-    <div class="project-meta">
-      <div class="meta-item"><span class="meta-label">Duration</span><span class="meta-value">7 min 08 sec</span></div>
-      <div class="meta-item"><span class="meta-label">Source Material</span><span class="meta-value">40+ recordings</span></div>
-      <div class="meta-item"><span class="meta-label">Year</span><span class="meta-value">2023</span></div>
-      <div class="meta-item"><span class="meta-label">Venue</span><span class="meta-value">Independent Gallery, Manila</span></div>
-      <div class="meta-item"><span class="meta-label">Tools</span><span class="meta-value">Ableton Live · iZotope RX · Reaper</span></div>
+      <div class="project-video-wrap">
+      <video
+        class="project-video"
+        src="src/Paraoan_CutUp_vid.mp4"
+        controls
+        preload="metadata"
+        playsinline
+      >
+        Your browser does not support the video tag.
+      </video>
     </div>
   </div>
 

@@ -6,7 +6,24 @@
 <title>Sound Craft — Pulse Alignment</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-
+<style>
+  .project-video-wrap {
+    width: 100%;
+    margin: 2rem 0 2.5rem;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.08);
+    background: #000;
+    position: relative;
+  }
+  .project-video {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+  }
+</style>
 </head>
 <body>
 <section class="project-page">
@@ -30,15 +47,16 @@
   </div>
 
   <div class="project-body">
-      <p>Beat matching is the invisible architecture of a great dance floor. <em>Pulse Alignment</em> was conceived as a live demonstration of cross-genre seamlessness: a 75-minute set moving from 88 BPM lo-fi soul through jazz-house, afro-funk, and into 130 BPM techno — without a single audible transition.</p>
-      <p>The technical challenge was not tempo but feel. A 90 BPM soul track carries a lazy pocket that a 90 BPM tech-house track does not. Matching bars is easy; matching groove requires ear training honed over years. Each bridge in this set was hand-crafted: EQ carves, low-end swaps, harmonic blending, and carefully timed filter sweeps.</p>
-      <p>Performed live at three venues and then reconstructed in the studio for release, the recording was mastered for both club systems and headphone listening — a rare dual-format approach that preserves both the physicality and the intimacy of the original performance.</p>
-    <div class="project-meta">
-      <div class="meta-item"><span class="meta-label">Duration</span><span class="meta-value">75 min</span></div>
-      <div class="meta-item"><span class="meta-label">BPM Range</span><span class="meta-value">88 → 130</span></div>
-      <div class="meta-item"><span class="meta-label">Tracks</span><span class="meta-value">32 licensed</span></div>
-      <div class="meta-item"><span class="meta-label">Year</span><span class="meta-value">2024</span></div>
-      <div class="meta-item"><span class="meta-label">Tools</span><span class="meta-value">Rekordbox · Serato · Pro Tools</span></div>
+      <div class="project-video-wrap">
+      <video
+        class="project-video"
+        src="src/Paraoan_BeatMatch_vid.mp4"
+        controls
+        preload="metadata"
+        playsinline
+      >
+        Your browser does not support the video tag.
+      </video>
     </div>
   </div>
 
