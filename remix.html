@@ -6,6 +6,24 @@
 <title>Sound Craft — Still Frequencies</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+  .project-video-wrap {
+    width: 100%;
+    margin: 2rem 0 2.5rem;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.08);
+    background: #000;
+    position: relative;
+  }
+  .project-video {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+  }
+</style>
 
 </head>
 <body>
@@ -31,8 +49,15 @@
 
   <div class="project-body">
     <div class="project-video-wrap">
-      <video class="project-video" src="Paraoan_Remix_vid.mp4"
-        preload="metadata"></video>
+      <video
+        class="project-video"
+        src="Paraoan_Remix_vid.mp4"
+        controls
+        preload="metadata"
+        playsinline
+      >
+        Your browser does not support the video tag.
+      </video>
     </div>
     <div class="project-meta">
       <div class="meta-item"><span class="meta-label">Runtime</span><span class="meta-value">22 min</span></div>
