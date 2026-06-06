@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sound Craft — Selected Works</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+#page-works {
+  position: relative;
+  min-height: 100vh;
+  padding: 6rem 3rem 4rem;
+  overflow: hidden;
+}
+
+.works-header {
+  position: relative; z-index: 2;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.works-title {
+  font-family: var(--font-title);
+  font-size: clamp(1.6rem,3vw,2.8rem);
+  color: var(--cream);
+  text-shadow: 0 0 40px rgba(201,168,76,.3);
+  margin-bottom: .5rem;
+}
+.works-sub {
+  font-style: italic; color: var(--muted);
+  font-size: 1rem; line-height: 1.8;
+}
+
+/* ── Grid ── */
+.works-grid {
+  position: relative; z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+}
+
+/* ── Soul card spans full row ── */
+.work-card-soul {
+  grid-column: 1 / -1;
+}
+
+/* ── Card base ── */
+.work-card {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(201,168,76,.2);
+  padding: 2rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .4s, transform .3s, background .3s;
+  text-decoration: none;
+  display: block;
+  color: inherit;
+  cursor: pointer;
+}
+.work-card::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,.08), transparent 70%);
+  opacity: 0; transition: opacity .4s;
+}
+.work-card:hover {
+  border-color: rgba(201,168,76,.55);
+  transform: translateY(-5px);
+  background: rgba(201,168,76,.04);
+}
+.work-card:hover::before { opacity: 1; }
+
+/* Soul card hover is extra special */
+.work-card-soul:hover {
+  border-color: rgba(201,168,76,.8);
+  background: rgba(201,168,76,.06);
+  box-shadow: 0 0 60px rgba(201,168,76,.15);
+}
+
+.wc-tr { position: absolute; top: 0; right: 0; width: 16px; height: 16px; border-top: 1px solid rgba(201,168,76,.5); border-right: 1px solid rgba(201,168,76,.5); }
+.wc-bl { position: absolute; bottom: 0; left: 0; width: 16px; height: 16px; border-bottom: 1px solid rgba(201,168,76,.5); border-left: 1px solid rgba(201,168,76,.5); }
+
+.work-num   { font-family: var(--font-label); font-size: .6rem; color: var(--gold); letter-spacing: .25em; margin-bottom: 1.25rem; }
+.work-icon  { font-size: 1.5rem; margin-bottom: .75rem; display: block; }
+.work-title { font-family: var(--font-title); font-size: .95rem; color: var(--cream); margin-bottom: .4rem; line-height: 1.3; }
+.work-type  { font-family: var(--font-label); font-size: .58rem; color: var(--gold2); letter-spacing: .2em; margin-bottom: .75rem; }
+.work-desc  { font-size: .85rem; color: var(--muted); line-height: 1.8; font-style: italic; }
+
+/* Soul card inner layout */
+.work-card-soul .soul-inner {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.work-card-soul .soul-left { flex: 0 0 auto; }
+.work-card-soul .soul-right { flex: 1; min-width: 240px; }
+.work-card-soul .work-icon { font-size: 3.5rem; }
+.work-card-soul .work-title { font-size: 1.5rem; }
+.soul-badge {
+  display: inline-block;
+  font-family: var(--font-label);
+  font-size: .55rem;
+  letter-spacing: .3em;
+  color: var(--navy);
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  padding: .3rem .9rem;
+  margin-bottom: 1rem;
+}
+.soul-tagline {
+  font-family: var(--font-title);
+  font-size: .85rem;
+  color: var(--gold2);
+  letter-spacing: .15em;
+  margin-top: .75rem;
+  font-style: italic;
+}
+.click-hint {
+  position: absolute;
+  bottom: 1rem; right: 1.5rem;
+  font-family: var(--font-label);
+  font-size: .55rem;
+  color: rgba(201,168,76,.4);
+  letter-spacing: .2em;
+  transition: color .3s;
+}
+.work-card:hover .click-hint { color: rgba(201,168,76,.8); }
+
+.back-row {
+  position: relative; z-index: 2;
+  display: flex; justify-content: center;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 760px) {
+  .works-grid { grid-template-columns: 1fr; }
+  .work-card-soul { grid-column: 1; }
+  .work-card-soul .soul-inner { flex-direction: column; gap: 1rem; }
+}
+@media (max-width: 900px) and (min-width: 761px) {
+  .works-grid { grid-template-columns: repeat(2, 1fr); }
+  .work-card-soul { grid-column: 1 / -1; }
+}
+</style>
+</head>
+<body>
+<section id="page-works">
+  <canvas class="stars-canvas" id="stars-canvas"></canvas>
+  <canvas class="stars-canvas" id="stars-canvas2"></canvas>
+
+  <div class="works-header">
+    <p class="eyebrow">Portfolio</p>
+    <h2 class="works-title">Selected Works</h2>
+    <div class="ornament">
+      <div class="ornament-line"></div><span>✦</span><div class="ornament-line r"></div>
+    </div>
+    <p class="works-sub">Nine disciplines, countless stories — each project a universe of its own.</p>
+  </div>
+
+  <div class="works-grid">
+
+    <!-- 01 Medley -->
+    <a href="medley.html" class="work-card">
+      <div class="wc-tr"></div><div class="wc-bl"></div>
+      <div class="work-num">01 — Medley</div>
+      <span class="work-icon">🎼</span>
+      <h3 class="work-title">Heritage Collage</h3>
+      <div class="work-type">Cultural Project · Archive Audio</div>
+      <p class="work-desc">Weaving folk melodies from three generations into one cohesive musical tapestry.</p>
+      <span class="click-hint">View Project →</span>
+    </a>
+
+    <!-- 02 Dubbing -->
+    <a href="dubbing.html" class="work-card">
+      <div class="wc-tr"></div><div class="wc-bl"></div>
+      <div class="work-num">02 — Dubbing</div>
+      <span class="work-icon">🎙️</span>
+      <h3 class="work-title">Voices Across</h3>
+      <div class="work-type">Broadcast TV · Localization</div>
+      <p class="work-desc">Series dialogue dubbing with precise lip-sync, preserving emotional nuance across languages.</p>
+      <span class="click-hint">View Project →</span>
+    </a>
+
+    <!-- 03 Cut Up -->
+    <a href="cutup.html" class="work-card">
+      <div class="wc-tr"></div><div class="wc-bl"></div>
+      <div class="work-num">03 — Cut Up</div>
+      <span class="work-icon">✂️</span>
+      <h3 class="work-title">Fractured Hymns</h3>
+      <div class="work-type">Experimental · Spoken Word</div>
+      <p class="work-desc">Deconstructed vocal recordings sliced and rearranged to surface new, hidden meanings.</p>
+      <span class="click-hint">View Project →</span>
+    </a>
+
+    <!-- 04 Beat Matching -->
+    <a href="beatmatching.html" class="work-card">
+      <div class="wc-tr"></div><div class="wc-bl"></div>
+      <div class="work-num">04 — Beat Matching</div>
+      <span class="work-icon">🥁</span>
+      <h3 class="work-title">Pulse Alignment</h3>
+      <div class="work-type">DJ Set · Live Performance</div>
+      <p class="work-desc">Seamlessly bridging tempos across genres — from 90 BPM soul to 128 BPM house without a single crack.</p>
+      <span class="click-hint">View Project →</span>
+    </a>
+
+    <!-- 05 Mashup -->
+    <a href="mashup.html" class="work-card">
+      <div class="wc-tr"></div><div class="wc-bl"></div>
+      <div class="work-num">05 — Mashup</div>
+      <span class="work-icon">🔀</span>
+      <h3 class="work-title">City Pulse Vol. 2</h3>
+      <div class="work-type">Live Event · Club Set</div>
+      <p class="work-desc">A live mashup set weaving 14 tracks into a seamless 40-minute audio journey.</p>
+      <span class="click-hint">View Project →</span>
+    </a>
+
+    <!-- 06 Audio Mix -->
+    <a href="audiomix.html" class="work-card">
+      <div class="wc-tr"></div><div class="wc-bl"></div>
+      <div class="work-num">06 — Audio Mix</div>
+      <span class="work-icon">🎚️</span>
+      <h3 class="work-title">Still Frequencies</h3>
+      <div class="work-type">Short Film · Sound Design</div>
+      <p class="work-desc">Full post-production mix for a 22-minute documentary — balanced, immersive, broadcast-ready.</p>
+      <span class="click-hint">View Project →</span>
+    </a>
+
+    <!-- 07 Foley -->
+    <a href="foley.html" class="work-card">
+      <div class="wc-tr"></div><div class="wc-bl"></div>
+      <div class="work-num">07 — Foley</div>
+      <span class="work-icon">🚶</span>
+      <h3 class="work-title">Dark Waters</h3>
+      <div class="work-type">Indie Film · Post Production</div>
+      <p class="work-desc">Complete foley design for an award-winning short — every footstep, raindrop, and breath.</p>
+      <span class="click-hint">View Project →</span>
+    </a>
+
+    <!-- 08 Dialogue -->
+    <a href="dialogue.html" class="work-card">
+      <div class="wc-tr"></div><div class="wc-bl"></div>
+      <div class="work-num">08 — Dialogue</div>
+      <span class="work-icon">💬</span>
+      <h3 class="work-title">Echoes Between</h3>
+      <div class="work-type">Drama Series · ADR &amp; Cleanup</div>
+      <p class="work-desc">Dialogue editing and ADR supervision for a 6-episode drama — clarity preserved through chaos.</p>
+      <span class="click-hint">View Project →</span>
+    </a>
+
+    <!-- 09 Sound of My Soul — Final Masterpiece, full-width -->
+    <a href="soul.html" class="work-card work-card-soul">
+      <div class="wc-tr"></div><div class="wc-bl"></div>
+      <div class="soul-inner">
+        <div class="soul-left">
+          <span class="work-icon">🌌</span>
+        </div>
+        <div class="soul-right">
+          <div class="soul-badge">Final Masterpiece</div>
+          <div class="work-num">09 — Audio Engineering Capstone</div>
+          <h3 class="work-title">Sound of My Soul</h3>
+          <div class="work-type">Original Composition · Sound Design · Full Production</div>
+          <p class="work-desc">
+            An original multi-layered sonic work that synthesizes every discipline — foley, dubbing, mixing, composition, and emotion — into a single immersive piece. Conceived as the culminating statement of an audio engineering journey: a universe born from silence.
+          </p>
+          <p class="soul-tagline">✦ &nbsp; Where every frequency tells a story &nbsp; ✦</p>
+        </div>
+      </div>
+      <span class="click-hint">Experience the Journey →</span>
+    </a>
+
+  </div><!-- /works-grid -->
+
+  <div class="back-row">
+    <a href="index.html" class="btn-ghost">↑ &nbsp; Return to the Stars</a>
+  </div>
+  <footer>© 2026 Sound Craft · All Rights Reserved · Crafted with Intention</footer>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
